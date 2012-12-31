@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>jQuery ClassyQR plugin | Class.PM</title>
+        <link rel="stylesheet" media="screen" href="css/documentation.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script type="text/javascript" src="js/jquery.classyqr.js"></script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <header>
+                <div class="container_6 clearfix">
+                    <h1 class="grid_6">jQuery ClassyQR</h1>
+                </div>
+            </header>
+            <section>
+                <div class="container_6 clearfix">
+                    <section class="main-section grid_6">
+                        <div class="main-content">
+                            <header>
+                                <h2>Overview</h2>
+                            </header>
+                            <section class="clearfix">
+                                <div>
+                                    <p><abbr>QR codes</abbr> are a popular type of two-dimensional barcode. They are also known as hardlinks or physical world hyperlinks.</p>
+                                    <p><abbr>QR codes</abbr> store up to 4,296 alphanumeric characters of arbitrary text. This text can be anything, for example URL, contact information, a telephone number, even a poem! <abbr>QR codes</abbr> can be read by an optical device with the appropriate software. Such devices range from dedicated <abbr>QR code</abbr> readers to mobile phones.</p>
+                                    <p>For more information check out <a target="_blank" href="http://code.google.com/apis/chart/infographics/docs/qr_codes.html">Google's <abbr>QR codes</abbr> documentation</a>.</p>
+                                    <p><a href="http://www.class.pm/projects/jquery/classyqr">ClassyQR</a> is a <a href="http://www.jquery.com">jQuery</a> plugin written by <a href="http://www.class.pm">Marius Stanciu - Sergiu</a>, a plugin that will allow you to embed QR codes into your web pages.</p>
+                                </div>
+                            </section>
+                        </div>
+                    </section>
+                </div>
+                <div class="container_6 clearfix">
+                    <section class="main-section grid_6">
+                        <div class="main-content">
+                            <header>
+                                <h2>Usage</h2>
+                            </header>
+                            <section class="clearfix">
+                                <div>
+<p>First you need to include the jQuery library, since ClassyQR is a plugin. You can download it from the <a href="http://www.jquery.com">jQuery website</a> or link it directly from the Google CDN.</p>
+<pre>
+&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"&gt;&lt;/script&gt;
+</pre>
+<p>Secondly, you need to include the jQuery ClassyQR javascript file into your page. You can do it by adding the code below to your page.</p>
+<pre>
+&lt;script src="js/jquery.classyqr.js"&gt;&lt;/script&gt;
+</pre>
+<p>Now, you have two possibilities of embedding a QR code.</p>
+<p><strong>1.</strong> Create the image tag that will be replaced with the QR code image.</p>
+<pre>
+&lt;img src="#" id="qr1" alt="" /&gt;
+</pre>
+<p>For the last part you activate the <em>ClassyQR()</em> function on the element you just created, so, we trigger the function on the image with the id <em>qr1</em>.</p>
+<pre>
+$("#qr1").ClassyQR({
+    type: 'text',
+    text: 'This is the text to embed'
+});
+</pre>
+<p><strong>2.</strong> Add a div with a specific id to your page, for example :</p>
+<pre>
+&lt;div id="qr2"&gt;&lt;/div&gt;
+</pre>
+<p>We trigger the function on the div with the id <em>qr2</em> AND we add the <mark>create: true</mark> option, which signals the library to create the image tag inside the container div.</p>
+<pre>
+$("#qr2").ClassyQR({
+    create: true,
+    type: 'text',
+    text: 'This is the text to embed'
+});
+</pre>
+                                </div>
+                            </section>
+                        </div>
+                    </section>
+                </div>
+                <div class="container_6 clearfix">
+                    <section class="main-section grid_6">
+                        <div class="main-content">
+                            <header>
+                                <h2>Usage</h2>
+                            </header>
+                            <section class="clearfix">
+                                <div>
+                                    <p><em><strong>size</strong></em> - size of the QR code. Can be omitted, default is <abbr>230</abbr>.</p>
+                                    <p><em><strong>encoding</strong></em> - encoding of the QR. Can be omitted, could be one of: UTF-8/Shift_JIS/ISO-8859-1, default is <abbr>UTF-8</abbr></p>
+                                    <p><em><strong>type</strong></em> - QR type. Can be: text/url/sms/email/call/location/wifi/contact, default is <abbr>text</abbr></p>
+                                    <p><em><strong>create</strong></em> - if the plugin will create an image tag inside the container or just replace the src of an already existing image tag. Can be true or false, default is <abbr>false</abbr>.</p>
+                                    <p><em><strong>text</strong></em> - the text to encode in the QR. Only needed for text, email or sms QR codes.</p>
+                                    <p><em><strong>number</strong></em> - the phone number if you want to create a sms or call QR code.</p>
+                                    <p><em><strong>email</strong></em> - the email address in case you want to create an email QR code.</p>
+                                    <p><em><strong>subject</strong></em> - the subject in case you want to create an email QR code.</p>
+                                    <p><em><strong>latitude</strong></em> - the geographical latitude for the geolocation QR code.</p>
+                                    <p><em><strong>longitude</strong></em> - the geographical longitude for the geolocation QR code.</p>
+                                    <p><em><strong>address</strong></em> - the home address in case you want to create a contact QR code.</p>
+                                    <p><em><strong>name</strong></em> - the name of the person in case you want to create a contact QR code.</p>
+                                    <p><em><strong>url</strong></em> - the URL address in case you want to create an url or contact QR code.</p>
+                                    <p><em><strong>alt</strong></em> - the alt code for the created/replaced image. Can be omitted.</p>
+                                    <p><em><strong>note</strong></em> - a note in case you want to create a contact QR code.</p>
+                                </div>
+                            </section>
+                        </div>
+                    </section>
+                </div>
+                <div class="container_6 clearfix">
+                    <section class="main-section grid_6">
+                        <div class="main-content">
+                            <header>
+                                <h2>Demo</h2>
+                            </header>
+                            <section class="clearfix">
+                                <div>
+                                    <div class="qrcode" id="qr1">
+                                        <p>Creates a simple <abbr>text</abbr> QR code with the default options.</p>
+                                    </div>
+                                    <div class="qrcode" id="qr2">
+                                        <p>Creates a <abbr>call</abbr> QR code, that your visitors can use to call your phone number.</p>
+                                    </div>
+                                    <div class="qrcode" id="qr3">
+                                        <p>Creates a geo<abbr>location</abbr> QR code.</p>
+                                    </div>
+                                    <div class="qrcode" id="qr4">
+                                        <p>Creates a <abbr>email</abbr> QR code, that your visitors can scan and send you an email to the specified address.</p>
+                                    </div>
+                                    <div class="qrcode" id="qr5">
+                                        <p>Creates a <abbr>sms</abbr> QR code, that your visitors can scan and send you an SMS.</p>
+                                    </div>
+                                    <div class="qrcode" id="qr6">
+                                        <p>Creates a <abbr>url</abbr> QR code, that your visitors can scan and go to a specified address.</p>
+                                    </div>
+                                    <div class="clear"></div>
+                                    <script>
+                                        $(document).ready(function() {
+                                            $('#qr1').ClassyQR({
+                                                create: true,
+                                                type: 'text',
+                                                text: 'Welcome to ClassPM!'
+                                            });
+                                            $('#qr2').ClassyQR({
+                                                create: true,
+                                                type: 'call',
+                                                number: '+407452353'
+                                            });
+                                            $('#qr3').ClassyQR({
+                                                create: true,
+                                                type: 'location',
+                                                latitude: '44.437711',
+                                                longitude: '26.097367'
+                                            });
+                                            $('#qr4').ClassyQR({
+                                                create: true,
+                                                type: 'email',
+                                                email: 'marius@userdot.net',
+                                                subject: 'Hello',
+                                                text: 'Just wanted to say hi, your QR library is amazing.'
+                                            });
+                                            $('#qr5').ClassyQR({
+                                                create: true,
+                                                type: 'sms',
+                                                number: '',
+                                                text: 'This is my QR code i`ve just generated'
+                                            });
+                                            $('#qr6').ClassyQR({
+                                                create: true,
+                                                type: 'url',
+                                                url: 'http://class.pm'
+                                            });
+                                        });
+                                    </script>
+                                </div>
+                            </section>
+                        </div>
+                    </section>
+                </div>
+            </section>
+        </div>
+        <script>
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-30825160-1']);
+            _gaq.push(['_trackPageview']);
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+    </body>
+</html>
