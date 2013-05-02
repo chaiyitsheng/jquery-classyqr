@@ -8,6 +8,6 @@ The jQuery ClassyQR is a jQuery plugin that will allow you to embed QR codes int
 
 @name ClassyQR
 @package jQuery plugin
-@author Marius Stanciu - Sergiu <marius@picozu.net>
+@author Marius Stanciu - Sergiu <marius@picozu.com>
 @website http://www.class.pm/projects/jquery/classyqr
 @version 1.1.0

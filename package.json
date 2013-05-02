@@ -1,0 +1,27 @@
+{
+	"name": "classyqr",
+	"title": "jQuery ClassyQR",
+	"description": "ClassyQR is a jQuery plugin that will allow you to embed QR codes into your web pages.",
+	"keywords": [
+		"qr",
+		"barcode"
+	],
+	"version": "1.1.0",
+	"author": {
+		"name": "Marius Stanciu - Sergiu",
+		"url": "http://www.class.pm"
+	},
+	"licenses": [
+		{
+			"type": "GPLv3",
+			"url": "http://www.gnu.org/licenses/gpl-3.0.txt"
+		}
+	],
+	"bugs": "https://github.com/classpm/jquery-classyqr/issues",
+	"homepage": "http://www.class.pm/projects/jquery/classyqr/",
+	"docs": "http://www.class.pm/projects/jquery/classyqr/",
+	"download": "https://github.com/classpm/jquery-classyqr/archive/master.zip",
+	"dependencies": {
+		"jquery": ">=1.6"
+	}
+}
